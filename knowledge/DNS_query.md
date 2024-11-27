@@ -1,5 +1,5 @@
-![alt text](image-2.png)
-![alt text](image-3.png)
+![alt text](../images/image-2.png)
+![alt text](../images/image-3.png)
 **DNS（Domain Name System，域名系统）** 是互联网中的一个核心服务，负责将域名（如`www.baidu.com`）解析为IP地址（如`123.125.114.144`），以便客户端（如浏览器）能够与服务器建立通信。以下是以查询`www.baidu.com`为例，DNS查询的详细过程以及其优化方式（快速DNS解析）的解释。
 
 ---
@@ -197,3 +197,95 @@ DNS解析通过逐层查询（或缓存优化）找到域名对应的IP地址，
 
 
 ----
+
+
+
+### **本地 DNS 缓存的作用与获取方式**
+
+**本地 DNS 缓存**是指操作系统或设备在解析域名（例如 `www.example.com`）时，会将域名解析得到的 IP 地址存储在本地，以便下次访问同一域名时可以直接使用缓存中的 IP 地址，而不必再去向 DNS 服务器请求解析，从而提高访问速度并减少 DNS 查询的网络延迟。
+
+### **本地 DNS 缓存是如何得到的？**
+
+当设备（如计算机、路由器或手机）首次解析一个域名时，操作系统会向配置的 DNS 服务器发送查询请求。DNS 服务器返回域名对应的 IP 地址后，操作系统会将这个 IP 地址存储到本地 DNS 缓存中。如果在一定时间内再查询同一域名，操作系统就可以直接使用缓存中的 IP 地址，而无需再次发送查询请求。
+
+### **如何查看本地 DNS 缓存：**
+
+在不同操作系统中，可以使用不同的命令查看本地 DNS 缓存的内容。
+
+#### 1. **Windows 系统**
+
+在 Windows 操作系统中，查看本地 DNS 缓存的命令如下：
+
+- 打开命令提示符（CMD）或 PowerShell。
+- 输入以下命令：
+
+```bash
+ipconfig /displaydns
+```
+
+该命令会显示当前计算机的 DNS 缓存列表，包括缓存的域名及其对应的 IP 地址。如果你希望清除缓存，可以使用以下命令：
+
+```bash
+ipconfig /flushdns
+```
+
+这个命令会清空本地的 DNS 缓存，强制计算机重新查询 DNS 服务器来解析域名。
+
+#### 2. **Linux 系统**
+
+在 Linux 系统中，DNS 缓存的管理方式通常依赖于系统使用的 DNS 服务（如 `systemd-resolved`、`dnsmasq` 或 `nscd` 等）。查看本地 DNS 缓存的方式可能会有所不同，具体命令如下：
+
+- **使用 `systemd-resolved`（Ubuntu 18.04 及以后版本等系统）**：
+
+```bash
+systemd-resolve --status
+```
+
+- **使用 `nscd`**：
+
+```bash
+nscd -g
+```
+
+- **使用 `dnsmasq`**：
+
+```bash
+sudo killall -USR1 dnsmasq
+```
+
+如果需要清除 DNS 缓存，在 Linux 系统中常见的命令如下：
+
+- **使用 `systemd-resolved` 清除 DNS 缓存**：
+
+```bash
+sudo systemd-resolve --flush-caches
+```
+
+- **使用 `nscd` 清除 DNS 缓存**：
+
+```bash
+sudo nscd -i hosts
+```
+
+#### 3. **macOS 系统**
+
+在 macOS 中，可以通过以下命令查看和清除 DNS 缓存：
+
+- 打开 **终端**（Terminal）应用。
+- 查看 DNS 缓存（macOS 没有直接显示缓存内容的命令，但可以使用以下命令清除缓存）：
+
+```bash
+sudo killall -HUP mDNSResponder
+```
+
+该命令会刷新 DNS 缓存，并强制重新解析域名。
+
+### **总结**
+
+本地 DNS 缓存是操作系统为了提高域名解析效率而存储的一份缓存数据，当操作系统或设备首次解析某个域名时，它会将解析结果（域名与 IP 地址的映射关系）存储到本地，以便后续查询时可以直接使用。
+
+- **Windows**：使用命令 `ipconfig /displaydns` 查看 DNS 缓存，使用 `ipconfig /flushdns` 清除缓存。
+- **Linux**：可以通过 `systemd-resolved --status` 或其他工具查看，使用 `systemd-resolve --flush-caches` 或 `nscd` 清除缓存。
+- **macOS**：使用命令 `sudo killall -HUP mDNSResponder` 刷新 DNS 缓存。
+
+通过这些命令，用户可以查看、清除或刷新本地 DNS 缓存，从而影响域名解析的行为。

@@ -1,4 +1,4 @@
-![alt text](image-1.png)
+![alt text](../images/image-1.png)
 
 SMTP（**Simple Mail Transfer Protocol**，简单邮件传输协议）是电子邮件发送的标准协议，用于在发送方和接收方的邮件服务器之间传递邮件报文。以下是SMTP发送邮件过程的详细解释，包括各个步骤的功能和运行原理。
 

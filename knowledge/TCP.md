@@ -1,7 +1,7 @@
 https://xiaolincoding.com/network/3_tcp/tcp_interview.html#tcp-%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B%E8%BF%87%E7%A8%8B%E6%98%AF%E6%80%8E%E6%A0%B7%E7%9A%84
 
-![alt text](image-4.png)
-![alt text](image-5.png)
+![alt text](../images/image-4.png)
+![alt text](../images/image-5.png)
 
 
 TCP（传输控制协议）和 UDP（用户数据报协议）是传输层协议，它们各自提供不同的服务，旨在实现端到端的数据传输。接下来，我将详细解释 TCP 和 UDP 提供的服务，并解释多路复用、多路分解、差错检验、可靠数据传输、面向连接的服务、拥塞控制等内容。

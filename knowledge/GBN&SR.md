@@ -59,6 +59,8 @@ GBN（Go-Back-N）和SR（Selective Repeat）是两种常见的自动重传请�
 
 ---
 
+![alt text](../images/image-6.png)
+
 ### **问题 a：发送方窗口内的报文序号可能是多少？**
 
 #### 背景

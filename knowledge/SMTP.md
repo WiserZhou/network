@@ -215,6 +215,6 @@ SMTP以其可靠性和普遍性成为电子邮件系统的核心协议。
 ---
 
 
-![alt text](image-5.png)
-![alt text](image-6.png)
-![alt text](image-7.png)
+![alt text](../images/15.png)
+![alt text](../images/16.png)
+![alt text](../images/17.png)

@@ -52,7 +52,7 @@ $$
 
 
 ---
-![alt text](image-3.png)
+![alt text](../images/13.png)
 
 SEQ + 1 -> ACK
 ACK -> SEQ 

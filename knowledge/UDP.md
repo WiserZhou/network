@@ -1,4 +1,4 @@
-![alt text](image-8.png)
+![alt text](../images/18.png)
 
 
 UDP（用户数据报协议）本身不包含IP地址信息，因为它是传输层协议，依赖于网络层（IP协议）来处理IP地址的传输。UDP数据报在传输时，IP协议会将源IP地址和目标IP地址封装在IP数据包的头部中。以下是UDP数据传输的过程：

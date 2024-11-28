@@ -72,7 +72,7 @@
 
 
 ----
-![alt text](image-1.png)
+![alt text](../images/20.png)
 在这张图中，OSPF（开放最短路径优先）路由器的角色分别是：
 
 1. **Backbone Router（主干路由器）**：

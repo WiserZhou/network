@@ -1,3 +1,15 @@
+![alt text](5b1580735cedf57932329f2103c541f.png)
+![alt text](13a2f92a90fadce941ee3fc6b9fac80.png)
+![alt text](025f00d9646c224c293e3ab8a36b951.jpg)
+![alt text](image-1.png)
+
+---
+
+https://blog.csdn.net/weixin_69884785/article/details/135743928
+
+![alt text](image.png)
+
+
 ### **TCP Reno和TCP Tahoe的区别**
 
 TCP Reno和TCP Tahoe都是实现TCP拥塞控制的算法，主要用于处理网络拥塞、避免数据丢失，并确保可靠的数据传输。虽然它们都遵循**慢启动**、**拥塞避免**、**快速重传**和**快速恢复**等机制，但它们在应对数据丢失时的处理方式有所不同。下面是TCP Reno和TCP Tahoe的主要区别：
@@ -8,7 +20,7 @@ TCP Reno和TCP Tahoe都是实现TCP拥塞控制的算法，主要用于处理网
 
 #### **TCP Tahoe：**
 - **快速重传（Fast Retransmit）：** TCP Tahoe会在收到三个重复的ACK时立即重传丢失的数据包，认为网络出现了拥塞。
-- **快速恢复（Fast Recovery）：** TCP Tahoe **没有**快速恢复机制。当TCP Tahoe检测到数据丢失时，进入**慢启动**阶段，并重置**拥塞窗口（cwnd）**为1个MSS（最大报文段长度）。
+- **快速恢复（Fast Recovery）：** TCP Tahoe **没有**快速恢复机制。当TCP Tahoe检测到数据丢失时，进入**慢启动**阶段，并重置**拥塞窗口（cwnd）** 为1个MSS（最大报文段长度）。
   
   **具体步骤：**
   - 当发生丢包时（即接收到三个重复ACK），TCP Tahoe会立即触发**快速重传**。
